@@ -14,11 +14,13 @@ const UseFetchJobList = () => {
           ? res.data
           : res.data.results || [];
         setJobs(data);
+       
+        console.log("check data", data);
       } catch (error) {
         console.error("Failed to fetch jobs:", error);
         setJobs([]);
       } finally {
-        setLoading(false); // Stop spinner
+        setLoading(false);
       }
     };
 

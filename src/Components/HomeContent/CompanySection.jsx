@@ -4,6 +4,10 @@ import UseFetchJobList from '../Hooks/UseFetchJobList';
 export default function CompanySection() {
   const { fetchedJobs, loading } = UseFetchJobList();
   const companies = fetchedJobs.slice(0, 8); 
+  companies.forEach(company => {
+  console.log("image check", company.logo_image);
+});
+
 
   if (loading) {
     return <p>Loading companies...</p>;
@@ -27,7 +31,7 @@ export default function CompanySection() {
                 <img
                   src={company.logo_image} 
                   alt={`${company.name} logo`}
-                  className="w-40 h-40  object-contain filter brightness-0 contrast-100"
+                  className="w-40 h-40  object-contain filter"
                 />
               </div>
             ))
